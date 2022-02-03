@@ -1,0 +1,1 @@
+select * from ulleres inner join marca on ulleres.idMarca = marca.idMarca where idProveidor =2 and dataventa is not null

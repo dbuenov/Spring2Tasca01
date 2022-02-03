@@ -1,0 +1,1 @@
+select * from ulleres where idVenedor=2 and DataVenta between "2020-01-01" and "2020-12-31"
