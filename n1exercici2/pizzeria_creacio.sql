@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2022-02-03 09:23
+-- Generated: 2022-02-03 17:28
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -56,7 +56,6 @@ CREATE TABLE IF NOT EXISTS `pizzeria`.`comanda` (
   `data_comanda` DATETIME NOT NULL,
   `tipus_entrega` ENUM("Domicili", "Botiga") NOT NULL,
   `id_client` INT(11) NOT NULL,
-  `preu_total` INT(11) NULL DEFAULT NULL,
   `id_empleat` INT(11) NULL DEFAULT NULL,
   `hora_entrega` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`id_comanda`),
@@ -104,7 +103,6 @@ CREATE TABLE IF NOT EXISTS `pizzeria`.`producte_comanda` (
   `id_comanda` INT(11) NOT NULL,
   `cuantitat` INT(11) NOT NULL,
   `id_producte` INT(11) NOT NULL,
-  `preu_producte_comanda` DECIMAL(10,2) NULL DEFAULT NULL,
   PRIMARY KEY (`id_producte_comanda`),
   INDEX `fk_producte_comanda_comanda1_idx` (`id_comanda` ASC) VISIBLE,
   INDEX `fk_producte_comanda_producte1_idx` (`id_producte` ASC) VISIBLE,

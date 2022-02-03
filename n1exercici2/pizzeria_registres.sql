@@ -1,4 +1,3 @@
-use pizzeria;
 insert into provincia (nom)
 values ("Barcelona"), ("Girona"), ("Tarragona"), ("Lleida");
 
@@ -242,14 +241,3 @@ values 	(1,2,1),
         (23,2,1),
 		(23,1,2),
         (23,3,5);
-		
-		
-update producte_comanda pc
-	join producte p on pc.id_producte = p.id_producte
-	set pc.preu_producte_comanda = pc.cuantitat * p.preu;
-	
-update comanda c
-	join (select sum(pc.preu_producte_comanda) as total, pc.id_comanda from producte_comanda pc
-		group by pc.id_comanda) as sumatorio
-	on c.id_comanda = sumatorio.id_comanda
-	set c.preu_total = sumatorio.total;
